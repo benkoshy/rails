@@ -236,6 +236,11 @@ Below each database statement you can see arrows pointing to the specific source
 
 Verbose query logs are enabled by default in the development environment logs after Rails 5.2.
 
+```rb
+# ./config/environments/development.rb
+config.active_record.verbose_query_logs = true
+```
+
 WARNING: We recommend against using this setting in production environments. It relies on Ruby's `Kernel#caller` method which tends to allocate a lot of memory in order to generate stacktraces of method calls. Use query log tags (see below) instead.
 
 ### Verbose Enqueue Logs
